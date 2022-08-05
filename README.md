@@ -1,16 +1,20 @@
 # youtubeapi
 
-A new Flutter project.
+## アーキテクチャ
 
-## Getting Started
+DDD（ドメイン駆動設計）に挑戦する
+参考 → https://flutteruniv.com/materials/lecture_videos/Q6Z1x0lb36bLgkV9WNeS
+ドメインとは？
+→ システムで解決したい業務領域のこと
+ex) 日記アプリ
+→ 日記部分、日記を書く人
 
-This project is a starting point for a Flutter application.
+## YoutubeAPI を使用して検索ワードを入力したらそれに関するチャンネルを返してくれる。
 
-A few resources to get you started if this is your first Flutter project:
+## 機能
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+・検索機能
+ワード検索
+ソート
+タイプ
+動画の長さ
