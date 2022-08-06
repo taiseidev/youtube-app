@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:youtubeapi/domain/model/video_model.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:youtubeapi/infrastructure/video_api_client.dart';
 import 'package:youtubeapi/infrastructure/video_repository.dart';
 
@@ -10,7 +11,7 @@ class VideoRepositoryImpl extends VideoRepository {
   Future<List<VideoModel>> fetchVideos(
     String word,
   ) async {
-    const apiKey = 'apiKey';
+    final apiKey = DotEnv().env['API_KEY'];
     const part = 'snippet';
     final responseBody =
         await _apiClient.get('/search?q=$word&key=$apiKey&part=$part');

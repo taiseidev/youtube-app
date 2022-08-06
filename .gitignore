@@ -126,3 +126,5 @@ app.*.symbols
 **macos
 **web
 **windows
+
+.env
