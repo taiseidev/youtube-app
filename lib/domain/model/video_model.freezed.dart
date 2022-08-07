@@ -161,7 +161,8 @@ class __$$_VideoModelCopyWithImpl<$Res> extends _$VideoModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-@JsonSerializable()
+
+@JsonSerializable(explicitToJson: true)
 class _$_VideoModel implements _VideoModel {
   _$_VideoModel(
       {this.channelId,
@@ -260,9 +261,7 @@ ThumbnailsModel _$ThumbnailsModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ThumbnailsModel {
-  String? get url => throw _privateConstructorUsedError;
-  int? get width => throw _privateConstructorUsedError;
-  int? get height => throw _privateConstructorUsedError;
+  MediumModel? get medium => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -275,7 +274,9 @@ abstract class $ThumbnailsModelCopyWith<$Res> {
   factory $ThumbnailsModelCopyWith(
           ThumbnailsModel value, $Res Function(ThumbnailsModel) then) =
       _$ThumbnailsModelCopyWithImpl<$Res>;
-  $Res call({String? url, int? width, int? height});
+  $Res call({MediumModel? medium});
+
+  $MediumModelCopyWith<$Res>? get medium;
 }
 
 /// @nodoc
@@ -289,24 +290,25 @@ class _$ThumbnailsModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? url = freezed,
-    Object? width = freezed,
-    Object? height = freezed,
+    Object? medium = freezed,
   }) {
     return _then(_value.copyWith(
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      width: width == freezed
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int?,
-      height: height == freezed
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int?,
+      medium: medium == freezed
+          ? _value.medium
+          : medium // ignore: cast_nullable_to_non_nullable
+              as MediumModel?,
     ));
+  }
+
+  @override
+  $MediumModelCopyWith<$Res>? get medium {
+    if (_value.medium == null) {
+      return null;
+    }
+
+    return $MediumModelCopyWith<$Res>(_value.medium!, (value) {
+      return _then(_value.copyWith(medium: value));
+    });
   }
 }
 
@@ -317,7 +319,10 @@ abstract class _$$_ThumbnailsModelCopyWith<$Res>
           _$_ThumbnailsModel value, $Res Function(_$_ThumbnailsModel) then) =
       __$$_ThumbnailsModelCopyWithImpl<$Res>;
   @override
-  $Res call({String? url, int? width, int? height});
+  $Res call({MediumModel? medium});
+
+  @override
+  $MediumModelCopyWith<$Res>? get medium;
 }
 
 /// @nodoc
@@ -333,23 +338,13 @@ class __$$_ThumbnailsModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? url = freezed,
-    Object? width = freezed,
-    Object? height = freezed,
+    Object? medium = freezed,
   }) {
     return _then(_$_ThumbnailsModel(
-      url: url == freezed
-          ? _value.url
-          : url // ignore: cast_nullable_to_non_nullable
-              as String?,
-      width: width == freezed
-          ? _value.width
-          : width // ignore: cast_nullable_to_non_nullable
-              as int?,
-      height: height == freezed
-          ? _value.height
-          : height // ignore: cast_nullable_to_non_nullable
-              as int?,
+      medium: medium == freezed
+          ? _value.medium
+          : medium // ignore: cast_nullable_to_non_nullable
+              as MediumModel?,
     ));
   }
 }
@@ -357,21 +352,17 @@ class __$$_ThumbnailsModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ThumbnailsModel implements _ThumbnailsModel {
-  _$_ThumbnailsModel({this.url, this.width, this.height});
+  _$_ThumbnailsModel({this.medium});
 
   factory _$_ThumbnailsModel.fromJson(Map<String, dynamic> json) =>
       _$$_ThumbnailsModelFromJson(json);
 
   @override
-  final String? url;
-  @override
-  final int? width;
-  @override
-  final int? height;
+  final MediumModel? medium;
 
   @override
   String toString() {
-    return 'ThumbnailsModel(url: $url, width: $width, height: $height)';
+    return 'ThumbnailsModel(medium: $medium)';
   }
 
   @override
@@ -379,18 +370,13 @@ class _$_ThumbnailsModel implements _ThumbnailsModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ThumbnailsModel &&
-            const DeepCollectionEquality().equals(other.url, url) &&
-            const DeepCollectionEquality().equals(other.width, width) &&
-            const DeepCollectionEquality().equals(other.height, height));
+            const DeepCollectionEquality().equals(other.medium, medium));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(url),
-      const DeepCollectionEquality().hash(width),
-      const DeepCollectionEquality().hash(height));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(medium));
 
   @JsonKey(ignore: true)
   @override
@@ -406,22 +392,147 @@ class _$_ThumbnailsModel implements _ThumbnailsModel {
 }
 
 abstract class _ThumbnailsModel implements ThumbnailsModel {
-  factory _ThumbnailsModel(
-      {final String? url,
-      final int? width,
-      final int? height}) = _$_ThumbnailsModel;
+  factory _ThumbnailsModel({final MediumModel? medium}) = _$_ThumbnailsModel;
 
   factory _ThumbnailsModel.fromJson(Map<String, dynamic> json) =
       _$_ThumbnailsModel.fromJson;
 
   @override
-  String? get url;
-  @override
-  int? get width;
-  @override
-  int? get height;
+  MediumModel? get medium;
   @override
   @JsonKey(ignore: true)
   _$$_ThumbnailsModelCopyWith<_$_ThumbnailsModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+MediumModel _$MediumModelFromJson(Map<String, dynamic> json) {
+  return _MediumModel.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MediumModel {
+  String? get url => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $MediumModelCopyWith<MediumModel> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MediumModelCopyWith<$Res> {
+  factory $MediumModelCopyWith(
+          MediumModel value, $Res Function(MediumModel) then) =
+      _$MediumModelCopyWithImpl<$Res>;
+  $Res call({String? url});
+}
+
+/// @nodoc
+class _$MediumModelCopyWithImpl<$Res> implements $MediumModelCopyWith<$Res> {
+  _$MediumModelCopyWithImpl(this._value, this._then);
+
+  final MediumModel _value;
+  // ignore: unused_field
+  final $Res Function(MediumModel) _then;
+
+  @override
+  $Res call({
+    Object? url = freezed,
+  }) {
+    return _then(_value.copyWith(
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+abstract class _$$_MediumModelCopyWith<$Res>
+    implements $MediumModelCopyWith<$Res> {
+  factory _$$_MediumModelCopyWith(
+          _$_MediumModel value, $Res Function(_$_MediumModel) then) =
+      __$$_MediumModelCopyWithImpl<$Res>;
+  @override
+  $Res call({String? url});
+}
+
+/// @nodoc
+class __$$_MediumModelCopyWithImpl<$Res> extends _$MediumModelCopyWithImpl<$Res>
+    implements _$$_MediumModelCopyWith<$Res> {
+  __$$_MediumModelCopyWithImpl(
+      _$_MediumModel _value, $Res Function(_$_MediumModel) _then)
+      : super(_value, (v) => _then(v as _$_MediumModel));
+
+  @override
+  _$_MediumModel get _value => super._value as _$_MediumModel;
+
+  @override
+  $Res call({
+    Object? url = freezed,
+  }) {
+    return _then(_$_MediumModel(
+      url: url == freezed
+          ? _value.url
+          : url // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_MediumModel implements _MediumModel {
+  _$_MediumModel({this.url});
+
+  factory _$_MediumModel.fromJson(Map<String, dynamic> json) =>
+      _$$_MediumModelFromJson(json);
+
+  @override
+  final String? url;
+
+  @override
+  String toString() {
+    return 'MediumModel(url: $url)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_MediumModel &&
+            const DeepCollectionEquality().equals(other.url, url));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(url));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_MediumModelCopyWith<_$_MediumModel> get copyWith =>
+      __$$_MediumModelCopyWithImpl<_$_MediumModel>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_MediumModelToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MediumModel implements MediumModel {
+  factory _MediumModel({final String? url}) = _$_MediumModel;
+
+  factory _MediumModel.fromJson(Map<String, dynamic> json) =
+      _$_MediumModel.fromJson;
+
+  @override
+  String? get url;
+  @override
+  @JsonKey(ignore: true)
+  _$$_MediumModelCopyWith<_$_MediumModel> get copyWith =>
       throw _privateConstructorUsedError;
 }

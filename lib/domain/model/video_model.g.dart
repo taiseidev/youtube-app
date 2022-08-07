@@ -22,21 +22,29 @@ Map<String, dynamic> _$$_VideoModelToJson(_$_VideoModel instance) =>
     <String, dynamic>{
       'channelId': instance.channelId,
       'channelTitle': instance.channelTitle,
-      'thumbnails': instance.thumbnails,
+      'thumbnails': instance.thumbnails?.toJson(),
       'title': instance.title,
       'description': instance.description,
     };
 
 _$_ThumbnailsModel _$$_ThumbnailsModelFromJson(Map<String, dynamic> json) =>
     _$_ThumbnailsModel(
-      url: json['url'] as String?,
-      width: json['width'] as int?,
-      height: json['height'] as int?,
+      medium: json['medium'] == null
+          ? null
+          : MediumModel.fromJson(json['medium'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$$_ThumbnailsModelToJson(_$_ThumbnailsModel instance) =>
     <String, dynamic>{
+      'medium': instance.medium,
+    };
+
+_$_MediumModel _$$_MediumModelFromJson(Map<String, dynamic> json) =>
+    _$_MediumModel(
+      url: json['url'] as String?,
+    );
+
+Map<String, dynamic> _$$_MediumModelToJson(_$_MediumModel instance) =>
+    <String, dynamic>{
       'url': instance.url,
-      'width': instance.width,
-      'height': instance.height,
     };

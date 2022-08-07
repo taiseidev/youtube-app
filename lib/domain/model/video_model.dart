@@ -6,6 +6,7 @@ part 'video_model.g.dart';
 
 @freezed
 class VideoModel with _$VideoModel {
+  @JsonSerializable(explicitToJson: true)
   factory VideoModel({
     String? channelId,
     String? channelTitle,
@@ -19,16 +20,22 @@ class VideoModel with _$VideoModel {
       _$VideoModelFromJson(json);
 }
 
-// VideoModel(channelId: null, channelTitle: null, url: null, width: null, height: null, title: null, description: null),
-
 @freezed
 class ThumbnailsModel with _$ThumbnailsModel {
   factory ThumbnailsModel({
-    String? url,
-    int? width,
-    int? height,
+    MediumModel? medium,
   }) = _ThumbnailsModel;
 
   factory ThumbnailsModel.fromJson(Map<String, dynamic> json) =>
       _$ThumbnailsModelFromJson(json);
+}
+
+@freezed
+class MediumModel with _$MediumModel {
+  factory MediumModel({
+    String? url,
+  }) = _MediumModel;
+
+  factory MediumModel.fromJson(Map<String, dynamic> json) =>
+      _$MediumModelFromJson(json);
 }
