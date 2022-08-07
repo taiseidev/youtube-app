@@ -4,7 +4,8 @@ import 'package:youtubeapi/domain/model/video_model.dart';
 import 'package:youtubeapi/presentation/notifier/video_notifier.dart';
 
 class VideoBody extends ConsumerWidget {
-  const VideoBody({Key? key}) : super(key: key);
+  VideoBody({Key? key}) : super(key: key);
+  final _controller = TextEditingController();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -12,11 +13,11 @@ class VideoBody extends ConsumerWidget {
     return video.when(
       data: ((data) => Column(
             children: [
-              VideoSearch(),
+              VideoSearch(_controller),
               const SizedBox(
                 height: 24,
               ),
-              VideoList(data),
+              VideoList(data, _controller),
             ],
           )),
       error: (context, error) => ErrorView(error),
@@ -26,21 +27,21 @@ class VideoBody extends ConsumerWidget {
 }
 
 class VideoSearch extends ConsumerWidget {
-  VideoSearch({Key? key}) : super(key: key);
-  final _controller = TextEditingController();
+  VideoSearch(this.controller, {Key? key}) : super(key: key);
+  TextEditingController controller;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.8,
       child: TextFormField(
-        controller: _controller,
+        controller: controller,
         decoration: InputDecoration(
           suffix: IconButton(
             icon: const Icon(Icons.search),
             onPressed: () => ref
                 .read(videoNotifierProvider.notifier)
-                .searchVideo(_controller.text),
+                .searchVideo(controller.text),
           ),
         ),
       ),
@@ -48,34 +49,41 @@ class VideoSearch extends ConsumerWidget {
   }
 }
 
-class VideoList extends StatelessWidget {
-  const VideoList(this.data, {Key? key}) : super(key: key);
+class VideoList extends ConsumerWidget {
+  VideoList(this.data, this.controller, {Key? key}) : super(key: key);
 
   final List<VideoModel> data;
 
+  TextEditingController controller;
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Expanded(
-      child: ListView.builder(
-        itemCount: data.length,
-        itemBuilder: ((context, index) {
-          final video = data[index];
-          return Card(
-            child: ListTile(
-              leading: ClipRRect(
-                borderRadius: BorderRadius.circular(40.0),
-                child: Image.network(
-                    video.thumbnails!.medium!.url ??
-                        'https://images.unsplash.com/photo-1603787081207-362bcef7c144?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80',
-                    fit: BoxFit.cover,
-                    width: 50.0,
-                    height: 50.0),
+      child: RefreshIndicator(
+        onRefresh: () => ref
+            .read(videoNotifierProvider.notifier)
+            .searchVideo(controller.text),
+        child: ListView.builder(
+          itemCount: data.length,
+          itemBuilder: ((context, index) {
+            final video = data[index];
+            return Card(
+              child: ListTile(
+                leading: ClipRRect(
+                  borderRadius: BorderRadius.circular(40.0),
+                  child: Image.network(
+                      video.thumbnails!.medium!.url ??
+                          'https://images.unsplash.com/photo-1603787081207-362bcef7c144?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80',
+                      fit: BoxFit.cover,
+                      width: 50.0,
+                      height: 50.0),
+                ),
+                title: Text(video.title ?? 'タイトル'),
+                subtitle: Text(video.description ?? '説明'),
               ),
-              title: Text(video.title ?? 'タイトル'),
-              subtitle: Text(video.description ?? '説明'),
-            ),
-          );
-        }),
+            );
+          }),
+        ),
       ),
     );
   }
