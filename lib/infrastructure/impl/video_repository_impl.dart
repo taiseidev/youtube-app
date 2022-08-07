@@ -1,8 +1,14 @@
 import 'dart:convert';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtubeapi/domain/model/video_model.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:youtubeapi/infrastructure/impl/video_api_client_impl.dart';
 import 'package:youtubeapi/infrastructure/video_api_client.dart';
 import 'package:youtubeapi/infrastructure/video_repository.dart';
+
+final videoRepositoryProvider = Provider.autoDispose(
+  (ref) => VideoRepositoryImpl(ref.read(videoApiClientProvider)),
+);
 
 class VideoRepositoryImpl extends VideoRepository {
   VideoRepositoryImpl(this._apiClient);
@@ -11,7 +17,7 @@ class VideoRepositoryImpl extends VideoRepository {
   Future<List<VideoModel>> fetchVideos(
     String word,
   ) async {
-    final apiKey = DotEnv().env['API_KEY'];
+    final apiKey = dotenv.env["API_KEY"];
     const part = 'snippet';
     final responseBody =
         await _apiClient.get('/search?q=$word&key=$apiKey&part=$part');
@@ -20,8 +26,9 @@ class VideoRepositoryImpl extends VideoRepository {
     if (decodedJson['totalResults'] == 0) {
       return repositoryList;
     }
-    for (final itemJson in decodedJson['items']) {
-      repositoryList.add(VideoModel.fromJson(itemJson as Map<String, dynamic>));
+    for (final data in decodedJson['items']) {
+      repositoryList
+          .add(VideoModel.fromJson(data['snippet'] as Map<String, dynamic>));
     }
     return repositoryList;
   }
