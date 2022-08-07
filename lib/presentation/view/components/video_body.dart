@@ -10,9 +10,40 @@ class VideoBody extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final video = ref.watch(videoNotifierProvider);
     return video.when(
-      data: ((data) => VideoList(data)),
+      data: ((data) => Column(
+            children: [
+              VideoSearch(),
+              const SizedBox(
+                height: 24,
+              ),
+              VideoList(data),
+            ],
+          )),
       error: (context, error) => ErrorView(error),
       loading: () => const LoadingView(),
+    );
+  }
+}
+
+class VideoSearch extends ConsumerWidget {
+  VideoSearch({Key? key}) : super(key: key);
+  final _controller = TextEditingController();
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return SizedBox(
+      width: MediaQuery.of(context).size.width * 0.8,
+      child: TextFormField(
+        controller: _controller,
+        decoration: InputDecoration(
+          suffix: IconButton(
+            icon: const Icon(Icons.search),
+            onPressed: () => ref
+                .read(videoNotifierProvider.notifier)
+                .searchVideo(_controller.text),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -24,18 +55,28 @@ class VideoList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: data.length,
-      itemBuilder: ((context, index) {
-        final video = data[index];
-        return Card(
-          child: ListTile(
-            leading: Text(video.thumbnails!.url ?? '画像'),
-            title: Text(video.title ?? 'タイトル'),
-            subtitle: Text(video.description ?? '説明'),
-          ),
-        );
-      }),
+    return Expanded(
+      child: ListView.builder(
+        itemCount: data.length,
+        itemBuilder: ((context, index) {
+          final video = data[index];
+          return Card(
+            child: ListTile(
+              leading: ClipRRect(
+                borderRadius: BorderRadius.circular(40.0),
+                child: Image.network(
+                    video.thumbnails!.medium!.url ??
+                        'https://images.unsplash.com/photo-1603787081207-362bcef7c144?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=930&q=80',
+                    fit: BoxFit.cover,
+                    width: 50.0,
+                    height: 50.0),
+              ),
+              title: Text(video.title ?? 'タイトル'),
+              subtitle: Text(video.description ?? '説明'),
+            ),
+          );
+        }),
+      ),
     );
   }
 }
