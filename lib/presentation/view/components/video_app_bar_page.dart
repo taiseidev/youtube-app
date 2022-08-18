@@ -8,7 +8,7 @@ class VideoAppBar extends StatelessWidget {
     return AppBar(
         backgroundColor: const Color.fromARGB(255, 159, 35, 22),
         title: const Text(
-          'VideoRepository',
+          'Youtube App',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             fontFamily: 'Rampart_One',

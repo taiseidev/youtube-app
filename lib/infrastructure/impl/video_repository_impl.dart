@@ -7,7 +7,9 @@ import 'package:youtubeapi/infrastructure/video_api_client.dart';
 import 'package:youtubeapi/infrastructure/video_repository.dart';
 
 final videoRepositoryImplProvider = Provider<VideoRepository>(
-  (ref) => VideoRepositoryImpl(ref.read(videoApiClientProvider)),
+  (ref) => VideoRepositoryImpl(
+    ref.read(videoApiClientProvider),
+  ),
 );
 
 class VideoRepositoryImpl extends VideoRepository {
