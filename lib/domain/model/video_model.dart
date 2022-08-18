@@ -5,7 +5,6 @@ part 'video_model.g.dart';
 
 @freezed
 class VideoModel with _$VideoModel {
-  @JsonSerializable(explicitToJson: true)
   factory VideoModel({
     String? channelId,
     String? channelTitle,

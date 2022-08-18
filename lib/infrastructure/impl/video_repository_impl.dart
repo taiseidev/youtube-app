@@ -18,9 +18,8 @@ class VideoRepositoryImpl extends VideoRepository {
     String word,
   ) async {
     final apiKey = dotenv.env["API_KEY"];
-    const part = 'snippet';
     final responseBody =
-        await _apiClient.get('/search?q=$word&key=$apiKey&part=$part');
+        await _apiClient.get('/search?q=$word&key=$apiKey&part=snippet');
     final decodedJson = json.decode(responseBody) as Map<String, dynamic>;
     final repositoryList = <VideoModel>[];
     if (decodedJson['totalResults'] == 0) {

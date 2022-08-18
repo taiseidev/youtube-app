@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtubeapi/app.dart';
 
 void main() async {
+  // .envファイル読み込み
   await dotenv.load(fileName: '.env');
   runApp(
     const ProviderScope(
