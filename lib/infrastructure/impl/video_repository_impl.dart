@@ -6,7 +6,7 @@ import 'package:youtubeapi/infrastructure/impl/video_api_client_impl.dart';
 import 'package:youtubeapi/infrastructure/video_api_client.dart';
 import 'package:youtubeapi/infrastructure/video_repository.dart';
 
-final videoRepositoryProvider = Provider.autoDispose(
+final videoRepositoryProvider = Provider(
   (ref) => VideoRepositoryImpl(ref.read(videoApiClientProvider)),
 );
 

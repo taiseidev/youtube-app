@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:youtubeapi/core/time_converter.dart';
 
 part 'video_model.freezed.dart';
 part 'video_model.g.dart';
@@ -13,7 +12,6 @@ class VideoModel with _$VideoModel {
     ThumbnailsModel? thumbnails,
     String? title,
     String? description,
-    // @TimeConverter() DateTime? publishedAt,
   }) = _VideoModel;
 
   factory VideoModel.fromJson(Map<String, dynamic> json) =>

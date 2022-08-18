@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:dio/dio.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
@@ -22,8 +21,6 @@ class VideoApiClientImpl extends VideoApiClient {
 
   @override
   Future<String> get(String endpoint) async {
-    final dio = Dio();
-    dio.interceptors.add(LogInterceptor());
     final url = '$baseUrl$endpoint';
     try {
       final response = await http.get(Uri.parse(url));
