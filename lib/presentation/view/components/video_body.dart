@@ -12,16 +12,16 @@ class VideoBody extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final video = ref.watch(videoNotifierProvider);
-    return Column(
-      children: [
-        VideoSearch(_controller),
-        const SizedBox(height: 24),
-        video.when(
-          data: ((data) => VideoList(data, _controller)),
-          error: (context, error) => VideoError(error),
-          loading: () => const VideoLoading(),
-        ),
-      ],
+    return video.when(
+      data: ((data) => Column(
+            children: [
+              VideoSearch(_controller),
+              const SizedBox(height: 24),
+              VideoList(data, _controller),
+            ],
+          )),
+      error: (context, error) => VideoError(error),
+      loading: () => const VideoLoading(),
     );
   }
 }
