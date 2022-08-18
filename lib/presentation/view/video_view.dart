@@ -13,7 +13,7 @@ class VideoView extends StatelessWidget {
           MediaQuery.of(context).size.width,
           70,
         ),
-        child: VideoAppBar(),
+        child: const VideoAppBar(),
       ),
       body: VideoBody(),
     );

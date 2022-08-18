@@ -6,7 +6,7 @@ class VideoAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-        backgroundColor: Color.fromARGB(255, 159, 35, 22),
+        backgroundColor: const Color.fromARGB(255, 159, 35, 22),
         title: const Text(
           'VideoRepository',
           style: TextStyle(
