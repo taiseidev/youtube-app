@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtubeapi/domain/model/video_model.dart';
-import 'package:youtubeapi/infrastructure/impl/video_repository_impl.dart';
+import 'package:youtubeapi/infrastructure/providers.dart';
 import 'package:youtubeapi/infrastructure/video_repository.dart';
 
 final videoNotifierProvider = StateNotifierProvider.autoDispose<VideoNotifier,

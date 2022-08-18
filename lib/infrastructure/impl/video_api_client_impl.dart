@@ -5,7 +5,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
 import 'package:youtubeapi/infrastructure/video_api_client.dart';
 
-final videoApiClientProvider = Provider((ref) => VideoApiClientImpl());
+final videoApiClientImplProvider =
+    Provider<VideoApiClient>((_) => VideoApiClientImpl());
 
 class VideoApiClientImpl extends VideoApiClient {
   // インスタンスをキャッシュ

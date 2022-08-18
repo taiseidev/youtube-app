@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:youtubeapi/presentation/view/components/video_app_bar.dart';
-import 'package:youtubeapi/presentation/view/components/video_body.dart';
+import 'package:youtubeapi/presentation/view/components/video_app_bar_page.dart';
+import 'package:youtubeapi/presentation/view/components/video_body_page.dart';
 
 class VideoView extends StatelessWidget {
   const VideoView({Key? key}) : super(key: key);

@@ -2,11 +2,11 @@ import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtubeapi/domain/model/video_model.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:youtubeapi/infrastructure/impl/video_api_client_impl.dart';
+import 'package:youtubeapi/infrastructure/providers.dart';
 import 'package:youtubeapi/infrastructure/video_api_client.dart';
 import 'package:youtubeapi/infrastructure/video_repository.dart';
 
-final videoRepositoryProvider = Provider(
+final videoRepositoryImplProvider = Provider<VideoRepository>(
   (ref) => VideoRepositoryImpl(ref.read(videoApiClientProvider)),
 );
 

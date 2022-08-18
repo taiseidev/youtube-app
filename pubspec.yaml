@@ -16,7 +16,6 @@ dependencies:
   freezed_annotation:
   json_annotation:
   intl:
-  dio:
   flutter_riverpod:
   flutter_dotenv:
   http:
