@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:youtubeapi/domain/model/video_model.dart';
 import 'package:youtubeapi/presentation/notifier/video_notifier.dart';
-import 'package:youtubeapi/presentation/view/components/video_error.dart';
-import 'package:youtubeapi/presentation/view/components/video_loading.dart';
+import 'package:youtubeapi/presentation/view/components/video_error_page.dart';
+import 'package:youtubeapi/presentation/view/components/video_loading_page.dart';
 
 class VideoBody extends ConsumerWidget {
   VideoBody({Key? key}) : super(key: key);

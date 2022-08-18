@@ -17,7 +17,7 @@ void main() async {
         videoRepositoryProvider
             .overrideWithProvider(videoRepositoryImplProvider),
       ],
-      child: App(),
+      child: const App(),
     ),
   );
 }
