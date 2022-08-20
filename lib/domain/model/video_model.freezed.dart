@@ -161,8 +161,7 @@ class __$$_VideoModelCopyWithImpl<$Res> extends _$VideoModelCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
-@JsonSerializable(explicitToJson: true)
+@JsonSerializable()
 class _$_VideoModel implements _VideoModel {
   _$_VideoModel(
       {this.channelId,

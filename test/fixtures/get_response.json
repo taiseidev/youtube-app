@@ -1,0 +1,176 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "3BK2WB_hEgNYQobApAnJJwKPW6o",
+  "nextPageToken": "CAUQAA",
+  "regionCode": "JP",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 5
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "q2xPNd632DS3JBNwrIiB9Sicuj4",
+      "id": {
+        "kind": "youtube#channel",
+        "channelId": "UCwXdFgeE9KYzlDdR7TG9cMw"
+      },
+      "snippet": {
+        "publishedAt": "2018-10-10T21:24:33Z",
+        "channelId": "UCwXdFgeE9KYzlDdR7TG9cMw",
+        "title": "Flutter",
+        "description": "Welcome to the official Flutter YouTube channel. Subscribe to stay up to date with best practices about the Flutter SDK. See real ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://yt3.ggpht.com/ytc/AMLnZu9gYALpdyk32YZAlIP5r7MxKBcknAS7FnM9v32E=s88-c-k-c0xffffffff-no-rj-mo"
+          },
+          "medium": {
+            "url": "https://yt3.ggpht.com/ytc/AMLnZu9gYALpdyk32YZAlIP5r7MxKBcknAS7FnM9v32E=s240-c-k-c0xffffffff-no-rj-mo"
+          },
+          "high": {
+            "url": "https://yt3.ggpht.com/ytc/AMLnZu9gYALpdyk32YZAlIP5r7MxKBcknAS7FnM9v32E=s800-c-k-c0xffffffff-no-rj-mo"
+          }
+        },
+        "channelTitle": "Flutter",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-10-10T21:24:33Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "JZh3PQzgJwbrs0d8vN8EwxPPRwk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "VPvVD8t02U8"
+      },
+      "snippet": {
+        "publishedAt": "2022-02-24T13:52:39Z",
+        "channelId": "UC8butISFwT-Wl7EV0hUK0BQ",
+        "title": "Flutter Course for Beginners – 37-hour Cross Platform App Development Tutorial",
+        "description": "Learn how to use Flutter in this complete course for beginners. Flutter is an open-source UI software development kit used to ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/VPvVD8t02U8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/VPvVD8t02U8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/VPvVD8t02U8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "freeCodeCamp.org",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-02-24T13:52:39Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "9V_THux2tQbDMFrdn0OTsixW9qE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "I9ceqw5Ny-4"
+      },
+      "snippet": {
+        "publishedAt": "2019-05-03T08:54:26Z",
+        "channelId": "UCVD5Vh9LhLBxp3o1vRNyf_w",
+        "title": "What is Flutter?",
+        "description": "In this series, we introduce you to the joys of working with Flutter and Dart to build iOS and Android apps with just one codebase ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/I9ceqw5Ny-4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/I9ceqw5Ny-4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/I9ceqw5Ny-4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "London App Brewery",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-05-03T08:54:26Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "U6npXhYcNJ8gSaBCtAFP4-rjB1k",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "lEHM9HZf0IA"
+      },
+      "snippet": {
+        "publishedAt": "2018-10-17T16:23:36Z",
+        "channelId": "UC_aEa8K-EOJ3D6gOs7HcyNg",
+        "title": "Diamond Eyes - Flutter [NCS Release]",
+        "description": "NCS (NoCopyrightSounds): Empowering Creators through Copyright / Royalty Free Music Follow us on Spotify: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/lEHM9HZf0IA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/lEHM9HZf0IA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/lEHM9HZf0IA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "NoCopyrightSounds",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-10-17T16:23:36Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "3KjrzoBK2Mqw0CydJvP6yuM-mdY",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "1xipg02Wu8s"
+      },
+      "snippet": {
+        "publishedAt": "2021-11-16T15:52:09Z",
+        "channelId": "UCsBjURrPoezykLs9EqgamOA",
+        "title": "Flutter Basic Training - 12 Minute Bootcamp",
+        "description": "Learn the basics of Flutter in 12 minutes. Take a hands-on tour of Flutter's most important building blocks to start building apps for ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1xipg02Wu8s/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1xipg02Wu8s/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1xipg02Wu8s/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Fireship",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-11-16T15:52:09Z"
+      }
+    }
+  ]
+}
