@@ -5,21 +5,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:convert';
 import 'package:youtubeapi/infrastructure/video_api_client.dart';
 
-final videoApiClientImplProvider =
-    Provider<VideoApiClient>((_) => VideoApiClientImpl());
+final videoApiClientImplProvider = Provider<VideoApiClient>(
+  (_) => VideoApiClientImpl('https://www.googleapis.com/youtube/v3'),
+);
 
 class VideoApiClientImpl extends VideoApiClient {
-  // インスタンスをキャッシュ
-  static final _instance =
-      VideoApiClientImpl._internal('https://www.googleapis.com/youtube/v3');
-
-  // factoryコンストラクタはインスタンスを生成せずにキャッシュを返す
-  factory VideoApiClientImpl() {
-    return _instance;
-  }
-  // クラス生成時にinstanceを生成するコンストラクタ
-  VideoApiClientImpl._internal(this.baseUrl);
-
+  VideoApiClientImpl(this.baseUrl);
   final String baseUrl;
 
   @override

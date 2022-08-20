@@ -22,7 +22,7 @@ Map<String, dynamic> _$$_VideoModelToJson(_$_VideoModel instance) =>
     <String, dynamic>{
       'channelId': instance.channelId,
       'channelTitle': instance.channelTitle,
-      'thumbnails': instance.thumbnails?.toJson(),
+      'thumbnails': instance.thumbnails,
       'title': instance.title,
       'description': instance.description,
     };
